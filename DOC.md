@@ -68,3 +68,48 @@ Linked at runtime and are not included into the executable;
 Code is shared, data is specific to each process;
 
 The dinamic libraries type is **.so** (shared object);
+
+## Useful C libraries 
+### atoi 
+Ascii to integer 
+``` C 
+int atoi(const char *str);
+```
+### atof 
+Ascii to float/double
+``` C
+double atof(const char *str);
+```
+### atol
+Ascii to long integer
+```C
+long int atol(const char *str);
+```
+### strtod
+Converts the string pointed to, by the argument str to a floating point number
+type double
+```C
+double strtod(const char *str, char **endptr);
+```
+### strtof
+Same as strtod but to float instead of double
+```C
+float strof(const char *str, char **endptr);
+```
+### strtol
+Converts the string pointed to, by the argument str to a long integer (type long int)
+- base = 10 -> Decimal
+- base = 16 -> Hexadecimal
+- base needs to be between 2 and 32, or special value 0
+```C
+long int strtol(const char *str, char **endptr, int base);
+```
+### rand 
+Provides a random number until RAND_MAX with a minimum of 32767
+```C 
+int rand(void);
+// We can specify the range, for example from 1 to 5 inclusive
+rand() % 5 + 1;
+// from 0 to 99
+rand() % 100;
+```
