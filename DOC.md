@@ -113,3 +113,15 @@ rand() % 5 + 1;
 // from 0 to 99
 rand() % 100;
 ```
+
+## Threads
+To run code with pthread.h included in the file we need to run
+***gcc [file].c -lpthread***
+
+### Deadlocks
+When using multiple mutexes, we should use the ``pthread_mutex_trylock(&mutex)``
+in a loop, instead of just using ``pthread_mutex_lock(&mutex)``.
+
+Inside the loop we should unlock the firstly locked mutex, so the other threads
+can free the lock, that way, deadlocks are prevented.
+
